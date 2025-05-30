@@ -1,0 +1,29 @@
+yizhiyuan-education/
+├── index.html                  # 首页
+├── about.html                  # 关于我们页面
+├── success.html                # 成功案例页面
+├── contact.html                # 联系我们页面
+├── styles.css              # 主样式文件
+│—— script.js               # 主JavaScript文件
+├── images/
+│   ├── logo.png                # 网站主logo
+│   ├── logo-white.png          # 白色版本logo(用于页脚)
+│   ├── hero-bg.jpg             # 首页英雄区域背景图
+│   ├── about-us.jpg            # 关于我们页面主图
+│   ├── team1.jpg               # 团队成员照片
+│   ├── team2.jpg
+│   ├── team3.jpg
+│   ├── case1.jpg               # 成功案例图片
+│   ├── case2.jpg
+│   ├── harvard.png             # 合作院校logo
+│   ├── yale.png
+│   ├── princeton.png
+│   ├── columbia.png
+│   ├── cornell.png
+│   ├── cambridge.png
+│   ├── oxford.png
+│   ├── imperial.png
+│   └── ucl.png
+└── fonts/                      # 自定义字体(如果有)
+    ├── font-name.woff
+    └── font-name.woff2

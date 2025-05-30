@@ -493,6 +493,40 @@
     justify-content: center;
     gap: 20px;
 }
+/* 优势部分CTA按钮容器 */
+.advantages-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+/* 为所有锚点目标添加偏移 */
+:target::before {
+    content: "";
+    display: block;
+    height: 80px; /* 与导航栏高度相同 */
+    margin: -80px 0 0; /* 负的上边距 */
+}
+
+/* 保持原有按钮基础样式，添加悬停效果 */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+    min-width: 180px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 
 /* 响应式调整 */
 @media (max-width: 992px) {
@@ -574,11 +608,10 @@ body {
 
 /* 导航栏 */
 .navbar {
-    background-color: var(--white);
+    background-color: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
     padding: 15px 0;
 }
@@ -604,35 +637,39 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--white);
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover{
+    color: var(--secondary-color);
+}
+
+.nav-links a.active {
     color: var(--secondary-color);
 }
 
 /* 英雄区域 */
 .hero {
-    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('../images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    text-align: center;
-    padding: 180px 0 100px;
-    margin-top: 80px;
-}
+            background: linear-gradient(rgba(26, 62, 114, 0.8), rgba(13, 43, 90, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 20px;
+        }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
 
 .cta-button {
     display: inline-block;
@@ -952,6 +989,12 @@ body {
     padding: 120px 0 80px;
 }
 
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1043,6 +1086,219 @@ body {
     border: none;
 }
 
+/* 日本留学页面特定样式 */
+.programs-section {
+    padding: 80px 0;
+}
+
+.program-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.program-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.program-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.program-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.program-details ul {
+    margin-bottom: 30px;
+}
+
+.program-details li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.program-details li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 留学申请页面特定样式 */
+.country-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.country-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.country-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.country-card:hover {
+    transform: translateY(-10px);
+}
+
+.country-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.country-info {
+    padding: 25px;
+}
+
+.country-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.country-info li {
+    margin-bottom: 8px;
+}
+
+.process-section {
+    padding: 80px 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.step {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+/* 菁英计划页面特定样式 */
+.elite-hero {
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('../images/elite-bg.jpg');
+}
+
+.elite-intro {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+}
+
+.elite-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.elite-services {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.service-content {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.service-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.service-content li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.service-content strong {
+    color: var(--primary-color);
+}
+
+.elite-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .program-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .country-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .elite-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* 响应式设计 */
 @media (max-width: 768px) {
     .about-content, .contact-content {
@@ -1051,10 +1307,6 @@ body {
     
     .case-study {
         grid-template-columns: 1fr;
-    }
-    
-    .nav-links {
-        display: none;
     }
     
     .hero {

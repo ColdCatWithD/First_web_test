@@ -54,3 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// 日本留学和菁英计划页面的标签切换
+document.querySelectorAll('.program-tabs .tab-button, .service-tabs .tab-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const tabContainer = this.closest('.program-tabs, .service-tabs');
+        const tabContents = tabContainer.nextElementSibling.querySelectorAll('.tab-content');
+        
+        // 移除同组中所有按钮的active类
+        tabContainer.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // 添加active类到当前按钮
+        this.classList.add('active');
+        
+        // 隐藏所有内容
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // 显示对应内容
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
